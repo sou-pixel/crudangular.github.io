@@ -1,0 +1,62 @@
+<form class="row g-3" (submit)="updateproduct(updateProductForm)" #updateProductForm ="ngForm">
+    <div class="col-md-6">
+      <label for="validationServer01" class="form-label">Productname</label>
+      <input type="text" class="form-control" id="validationServer01"  [(ngModel)]="productdetails.productName"  name="product_name"  ngModel required>
+
+    </div>
+    <div class="col-md-6">
+      <label for="validationServer02" class="form-label">categoryId</label>
+      <input type="text" class="form-control" id="validationServer02"  [(ngModel)]="productdetails.categoryid" name="product_category" required>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label for="exampleFormControlTextarea1">Description</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" [(ngModel)]="productdetails.description" name ="product_description" ngModel required rows="3"></textarea>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputState">Rating</label>
+      <select id="inputState" class="form-control" [(ngModel)]="productdetails.rating" name="product_rating" required ngModel>
+        <option selected>Choose...</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+    </div>
+
+    <div class="col-md-6">
+      <label for="validationServer02" class="form-label">Product-color</label>
+      <input type="text" class="form-control" id="validationServer02" [(ngModel)]="productdetails.color " required name="product_color" ngModel>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label for="inputState">Is Avaliable</label>
+      <select id="inputState" class="form-control" [(ngModel)]="productdetails.isAvailable" name="product_avaiable" required>
+        <option selected>Choose...</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+      </select>
+    </div>
+    <div class="col-md-6">
+      <label for="validationServer02" class="form-label">Product Price</label>
+      <input type="text" class="form-control" id="validationServer02" [(ngModel)]="productdetails.price" name="product_price" required ngModel>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputState">Review</label>
+      <select id="inputState" class="form-control" [(ngModel)]="productdetails.review"  name="product_review">
+        <option selected>Choose...</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+    </div>
+    <div class="col-md-6">
+    <button class="btn btn-info" [disabled] = "!updateProductForm.valid"> Update product</button>
+    </div>
+  </form>
+
